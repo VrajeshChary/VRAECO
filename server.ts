@@ -1,5 +1,4 @@
 import express from "express";
-import { createServer as createViteServer } from "vite";
 import path from "path";
 import { fileURLToPath } from "url";
 import crypto from "crypto";
@@ -499,11 +498,8 @@ const orderTimestamps: Record<string, number[]> = {};
 const sessions: Record<string, any> = {};
 const pendingOrders: Record<string, any> = {};
 
-async function startServer() {
-  const app = express();
-  const PORT = process.env.PORT ? Number(process.env.PORT) : 3000;
-
-  app.use(express.json());
+export const app = express();
+app.use(express.json());
 
   // === 1. Session ===
   app.get("/api/session", (req, res) => {
@@ -773,28 +769,36 @@ async function startServer() {
     }
   });
 
-  // === Vite Middleware ===
-  if (process.env.NODE_ENV !== "production") {
-    const vite = await createViteServer({
-      server: { middlewareMode: true },
-      appType: "spa",
-    });
-    app.use(vite.middlewares);
-  } else {
-    const distPath = path.join(process.cwd(), "dist");
-    app.use(express.static(distPath));
-    app.get("*", (req, res) => {
-      res.sendFile(path.join(distPath, "index.html"));
-    });
+  // === LOCAL SERVER (Vite Middleware & Listen) ===
+  // Vercel Serverless will just use the exported `app` above.
+  if (!process.env.VERCEL) {
+    const startLocalServer = async () => {
+      const PORT = process.env.PORT ? Number(process.env.PORT) : 3000;
+      
+      if (process.env.NODE_ENV !== "production") {
+        const { createServer: createViteServer } = await import("vite");
+        const vite = await createViteServer({
+          server: { middlewareMode: true },
+          appType: "spa",
+        });
+        app.use(vite.middlewares);
+      } else {
+        const distPath = path.join(process.cwd(), "dist");
+        app.use(express.static(distPath));
+        app.get("*", (req, res) => {
+          res.sendFile(path.join(distPath, "index.html"));
+        });
+      }
+
+      app.listen(PORT, "0.0.0.0", () => {
+        console.log(`\n🚀 VRAECO Server running on http://localhost:${PORT}`);
+        console.log(`📧 Email: ${transporter ? "ENABLED" : "Console fallback"}`);
+        console.log(`💳 Razorpay: ${process.env.RAZORPAY_KEY_ID ? "CONFIGURED" : "NOT CONFIGURED"}`);
+        console.log(`🔥 Firestore: ${db ? "CONNECTED" : "IN-MEMORY FALLBACK"}`);
+        console.log("");
+      });
+    };
+    startLocalServer();
   }
 
-  app.listen(PORT, "0.0.0.0", () => {
-    console.log(`\n🚀 VRAECO Server running on http://localhost:${PORT}`);
-    console.log(`📧 Email: ${transporter ? "ENABLED" : "Console fallback"}`);
-    console.log(`💳 Razorpay: ${process.env.RAZORPAY_KEY_ID ? "CONFIGURED" : "NOT CONFIGURED"}`);
-    console.log(`🔥 Firestore: ${db ? "CONNECTED" : "IN-MEMORY FALLBACK"}`);
-    console.log("");
-  });
-}
-
-startServer();
+export default app;
