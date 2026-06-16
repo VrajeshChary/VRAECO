@@ -49,6 +49,8 @@ export default function ProductPage() {
   const [stockLeft, setStockLeft] = useState(product.stockCount);
   const [userLocation, setUserLocation] = useState("Mumbai");
   const [isVideoPlaying, setIsVideoPlaying] = useState(!!product.videoUrl);
+  const [viewers, setViewers] = useState(Math.floor(Math.random() * 40) + 12);
+  const [recentOrders, setRecentOrders] = useState(Math.floor(Math.random() * 15) + 3);
 
   useEffect(() => {
     const initialDelay = Math.random() * 15000 + 15000;

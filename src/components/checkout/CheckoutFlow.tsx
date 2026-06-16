@@ -285,6 +285,7 @@ export default function CheckoutFlow() {
         amount: amountInPaise as number,
         currency: 'INR',
         name: 'VRAECO',
+        order_id: razorpayOrderId,
         description: `Order #VRA-${orderId}`,
         handler: async function (rzpResponse: any) {
           try {

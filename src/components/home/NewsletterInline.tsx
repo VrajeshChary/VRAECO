@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Mail } from 'lucide-react';
 
-export default function NewsletterInline({ variant = 'gold' }: { variant?: 'gold' | 'light' }) {
+export default function NewsletterInline({ variant = 'gold' }: { variant?: 'gold' | 'light' | 'dark' }) {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
