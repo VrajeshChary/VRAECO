@@ -12,15 +12,15 @@ import TrustBadges from './components/ui/TrustBadges';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import CartSidebar from './components/ui/CartSidebar';
-import ExitIntentPopup from './components/ui/ExitIntentPopup';
+
 import ToastContainer from './components/ui/ToastContainer';
-import SocialProofPopup from './components/ui/SocialProofPopup';
+
 import EmailCapturePopup from './components/ui/EmailCapturePopup';
 import OfflineBanner from './components/ui/OfflineBanner';
 
 import FirstVisitPopup from './components/ui/FirstVisitPopup';
 import CartAbandonmentRecovery from './components/ui/CartAbandonmentRecovery';
-import ReturningVisitor from './components/ui/ReturningVisitor';
+
 
 // Pages
 import Home from './pages/Home';
@@ -74,7 +74,7 @@ function AppContent() {
       <ScrollToTop />
       <CustomCursor />
       <AnnouncementBar />
-      {!isCheckout && <ReturningVisitor />}
+
 
       <Navbar cartCount={cartCount} onCartClick={() => setIsCartOpen(true)} />
       {!isCheckout && <Breadcrumbs />}
@@ -117,12 +117,12 @@ function AppContent() {
         isOpen={isCartOpen}
         onClose={() => setIsCartOpen(false)}
       />
-      <ExitIntentPopup />
+
       <FirstVisitPopup />
       <CartAbandonmentRecovery />
       <OfflineBanner />
       <ToastContainer />
-      <SocialProofPopup />
+
       <EmailCapturePopup />
       <LiveChat />
       <FloatingCartButton onCartClick={() => setIsCartOpen(true)} />

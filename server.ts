@@ -1,23 +1,21 @@
 import express from "express";
 import path from "path";
-import { fileURLToPath } from "url";
 import crypto from "crypto";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 import Razorpay from "razorpay";
 import admin from "firebase-admin";
+import fs from "fs";
 
 dotenv.config();
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 // ==================== FIREBASE ADMIN ====================
 let db: admin.firestore.Firestore;
 try {
-  const serviceAccountPath = path.join(__dirname, "firebase-admin-config.json");
+  const serviceAccountPath = path.join(process.cwd(), "firebase-admin-config.json");
   try {
-    const serviceAccount = require(serviceAccountPath);
+    const serviceAccountContent = fs.readFileSync(serviceAccountPath, "utf-8");
+    const serviceAccount = JSON.parse(serviceAccountContent);
     admin.initializeApp({
       credential: admin.credential.cert(serviceAccount),
     });
@@ -43,10 +41,15 @@ try {
 }
 
 // ==================== RAZORPAY ====================
-const razorpay = new Razorpay({
-  key_id: process.env.RAZORPAY_KEY_ID || "",
-  key_secret: process.env.RAZORPAY_KEY_SECRET || "",
-});
+let razorpay: any = null;
+try {
+  razorpay = new Razorpay({
+    key_id: process.env.RAZORPAY_KEY_ID || "dummy_key",
+    key_secret: process.env.RAZORPAY_KEY_SECRET || "dummy_secret",
+  });
+} catch (e: any) {
+  console.warn("[RAZORPAY] Init error:", e.message);
+}
 
 // ==================== PRICE CATALOG (Backend Source of Truth) ====================
 const PRODUCT_CATALOG: Record<string, { name: string; price: number }> = {
@@ -89,18 +92,23 @@ const PRODUCT_CATALOG: Record<string, { name: string; price: number }> = {
 let transporter: nodemailer.Transporter | null = null;
 
 const initTransporter = async () => {
+  if (transporter) return;
   const user = process.env.SMTP_USER || "vraeco.store@gmail.com";
   const pass = process.env.SMTP_PASS || "";
   if (!pass) {
     console.log("[EMAIL] No SMTP credentials. Creating Ethereal Test Account for testing proper emails...");
-    const testAccount = await nodemailer.createTestAccount();
-    transporter = nodemailer.createTransport({
-      host: "smtp.ethereal.email",
-      port: 587,
-      secure: false,
-      auth: { user: testAccount.user, pass: testAccount.pass },
-    });
-    console.log("[EMAIL] Ethereal ready.");
+    try {
+      const testAccount = await nodemailer.createTestAccount();
+      transporter = nodemailer.createTransport({
+        host: "smtp.ethereal.email",
+        port: 587,
+        secure: false,
+        auth: { user: testAccount.user, pass: testAccount.pass },
+      });
+      console.log("[EMAIL] Ethereal ready.");
+    } catch (err) {
+      console.warn("[EMAIL] Ethereal init failed", err);
+    }
     return;
   }
   transporter = nodemailer.createTransport({
@@ -108,9 +116,9 @@ const initTransporter = async () => {
     auth: { user, pass },
   });
 };
-initTransporter();
 
 const sendCustomerConfirmationEmail = async (orderData: any, orderId: string) => {
+  await initTransporter();
   if (!orderData.email) return;
   const d1 = new Date(); d1.setDate(d1.getDate() + 3);
   const d2 = new Date(); d2.setDate(d2.getDate() + 5);
@@ -279,6 +287,7 @@ const sendCustomerConfirmationEmail = async (orderData: any, orderId: string) =>
 };
 
 const sendOrderEmail = async (orderData: any, orderId: string) => {
+  await initTransporter();
   const now = new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata", day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit", weekday: "long" });
   const itemCount = orderData.items.reduce((sum: number, i: any) => sum + i.quantity, 0);
 
@@ -427,6 +436,7 @@ const sendOrderEmail = async (orderData: any, orderId: string) => {
 };
 
 const sendAbandonedCartEmail = async (email: string, items: any[]) => {
+  await initTransporter();
   const itemNames = items.map((i: any) => `${i.quantity}x ${i.name}`).join(", ");
   const total = items.reduce((acc: number, i: any) => acc + i.price * i.quantity, 0);
   const html = `
