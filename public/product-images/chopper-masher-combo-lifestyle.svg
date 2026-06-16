@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <defs><radialGradient id="bg" cx="30%" cy="50%" r="70%"><stop offset="0%" stop-color="#1a2515"/><stop offset="100%" stop-color="#0a0d05"/></radialGradient></defs>
+  <rect width="600" height="400" fill="url(#bg)"/>
+  <text x="260" y="185" text-anchor="middle" font-size="56" opacity="0.8">🥔</text>
+  <text x="350" y="200" text-anchor="middle" font-size="40" opacity="0.6">🧅</text>
+  <text x="300" y="290" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#e8e8f0" opacity="0.5" letter-spacing="2">CHOP &amp; MASH · KITCHEN ESSENTIALS</text>
+  <text x="300" y="310" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#c9a84c" opacity="0.3" letter-spacing="3">LIFESTYLE</text>
+</svg>

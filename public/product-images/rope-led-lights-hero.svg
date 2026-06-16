@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <defs><radialGradient id="b" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#15152a"/><stop offset="100%" stop-color="#08081a"/></radialGradient></defs>
+  <rect width="400" height="400" fill="url(#b)"/>
+  <path d="M60 160 Q100 120,140 160 T220 160 T300 160 T340 160" fill="none" stroke="#c9a84c" stroke-width="1.5" opacity="0.5"/>
+  <circle cx="100" cy="140" r="6" fill="#c9a84c" opacity="0.4"/><circle cx="140" cy="160" r="6" fill="#e0c06e" opacity="0.5"/><circle cx="180" cy="140" r="6" fill="#c9a84c" opacity="0.3"/><circle cx="220" cy="160" r="6" fill="#e0c06e" opacity="0.4"/><circle cx="260" cy="140" r="6" fill="#c9a84c" opacity="0.5"/><circle cx="300" cy="160" r="6" fill="#e0c06e" opacity="0.3"/>
+  <text x="200" y="300" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#e8e8f0" opacity="0.7" letter-spacing="2">ROPE LED LIGHTS</text>
+  <text x="200" y="320" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#c9a84c" opacity="0.5" letter-spacing="3">DIY MAGIC LIGHTING</text>
+</svg>

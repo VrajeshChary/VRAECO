@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <defs><radialGradient id="bg" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#1f3a1f"/><stop offset="100%" stop-color="#0a1510"/></radialGradient></defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <circle cx="200" cy="180" r="60" fill="none" stroke="#c9a84c" stroke-width="2.5" opacity="0.6"/>
+  <circle cx="200" cy="180" r="60" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.2" stroke-dasharray="3 4"/>
+  <!-- Close-up of lid detail -->
+  <circle cx="175" cy="165" r="5" fill="#d4452b" opacity="0.6"/><circle cx="210" cy="155" r="5" fill="#c9a84c" opacity="0.5"/>
+  <circle cx="225" cy="175" r="5" fill="#22a87a" opacity="0.5"/><circle cx="185" cy="195" r="5" fill="#3d98c4" opacity="0.4"/>
+  <circle cx="200" cy="180" r="3" fill="#fff" opacity="0.3"/>
+  <text x="200" y="310" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#e8e8f0" opacity="0.5" letter-spacing="2">AIRTIGHT SHAKER LIDS</text>
+  <text x="200" y="330" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#c9a84c" opacity="0.4" letter-spacing="3">STAINLESS STEEL</text>
+</svg>

@@ -1,0 +1,44 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper Functions
+    function isValidString(val, minLen, maxLen) {
+      return val is string && val.size() >= minLen && val.size() <= maxLen;
+    }
+    
+    function isValidPhone(val) {
+      return val is string && val.matches('^[0-9]{10}$');
+    }
+    
+    function isValidPincode(val) {
+      return val is string && val.matches('^[0-9]{6}$');
+    }
+
+    function isValidOrder(data) {
+      return data.keys().hasAll(['customerName', 'phone', 'address', 'items', 'total', 'paymentMethod', 'status', 'createdAt']) &&
+             isValidString(data.customerName, 2, 100) &&
+             isValidPhone(data.phone) &&
+             data.address is map &&
+             data.address.keys().hasAll(['house', 'road', 'colony', 'city', 'state', 'pincode']) &&
+             isValidString(data.address.house, 1, 100) &&
+             isValidString(data.address.road, 1, 100) &&
+             isValidString(data.address.colony, 1, 100) &&
+             isValidString(data.address.city, 1, 100) &&
+             isValidString(data.address.state, 1, 100) &&
+             isValidPincode(data.address.pincode) &&
+             data.items is list && data.items.size() > 0 && data.items.size() <= 50 &&
+             data.total is number && data.total >= 0 &&
+             data.paymentMethod in ['COD', 'UPI', 'Card'] &&
+             data.status == 'pending' &&
+             data.createdAt is timestamp;
+    }
+
+    match /orders/{orderId} {
+      // Allow anyone to create an order (guest checkout)
+      allow create: if isValidOrder(request.resource.data);
+      // Deny read/update/delete to public
+      allow read, update, delete: if false;
+    }
+  }
+}
