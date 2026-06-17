@@ -42,7 +42,7 @@ export default function Upsell() {
     <>
       <Helmet>
         <title>Special One-Time Offer | VRAECO — Don't Miss Out!</title>
-        <link rel="canonical" href="https://vraeco.com" />
+        <link rel="canonical" href="https://vreco.vercel.app" />
       </Helmet>
     <main className="pt-32 pb-20 min-h-screen bg-void flex items-center justify-center px-5">
       <div className="max-w-[600px] w-full">

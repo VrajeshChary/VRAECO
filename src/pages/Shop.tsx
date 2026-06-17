@@ -8,8 +8,8 @@ export default function Shop() {
         <title>Shop All Viral Products | Best Prices in India — VRAECO</title>
         <meta name="description" content="Browse 100+ trending products at VRAECO. Kitchen, wellness, decor & more. Best prices, free shipping, COD available. Shop now!" />
         <meta property="og:title" content="Shop All Viral Products | VRAECO India" />
-        <meta property="og:url" content="https://vraeco.com/shop" />
-        <link rel="canonical" href="https://vraeco.com/shop" />
+        <meta property="og:url" content="https://vreco.vercel.app/shop" />
+        <link rel="canonical" href="https://vreco.vercel.app/shop" />
       </Helmet>
       <main className="pt-32 pb-20 min-h-screen">
       <div className="section-inner">

@@ -7,7 +7,7 @@ export default function TermsOfService() {
       <Helmet>
         <title>Terms of Service | VRAECO — India</title>
         <meta name="description" content="Read VRAECO's terms of service. Governing law: India. Accurate pricing, intellectual property, and liability terms." />
-        <link rel="canonical" href="https://vraeco.com/terms-of-service" />
+        <link rel="canonical" href="https://vreco.vercel.app/terms-of-service" />
       </Helmet>
     <main className="pt-32 pb-20 min-h-screen bg-void">
       <div className="section-inner max-w-[800px]">

@@ -24,7 +24,7 @@ export default function Product() {
           ? `${product.name} online at VRAECO. Was ₹${product.originalPrice}, Now ₹${product.vraecoPrice}. ${product.hookLine} Free shipping, COD available. ${product.rating}★ from ${product.reviews.toLocaleString()}+ reviews.`
           : 'Shop this viral product at VRAECO. Best price in India, free shipping, cash on delivery available. 7-day hassle-free returns.'
         } />
-        <link rel="canonical" href={`https://vraeco.com/product/${id}`} />
+        <link rel="canonical" href={`https://vreco.vercel.app/product/${id}`} />
       </Helmet>
       <main>
         <ProductPage />

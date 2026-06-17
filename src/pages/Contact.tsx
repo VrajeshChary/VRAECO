@@ -44,8 +44,8 @@ export default function Contact() {
         <title>Contact VRAECO Support — vraeco.store@gmail.com | India</title>
         <meta name="description" content="Get in touch with VRAECO customer support. Email: vraeco.store@gmail.com. Fast response guaranteed. Questions about orders, returns, or products?" />
         <meta property="og:title" content="Contact VRAECO Support" />
-        <meta property="og:url" content="https://vraeco.com/contact" />
-        <link rel="canonical" href="https://vraeco.com/contact" />
+        <meta property="og:url" content="https://vreco.vercel.app/contact" />
+        <link rel="canonical" href="https://vreco.vercel.app/contact" />
       </Helmet>
       <main className="pt-32 pb-20 min-h-screen">
         <div className="section-inner max-w-[600px]">

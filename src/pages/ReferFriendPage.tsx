@@ -10,7 +10,7 @@ export default function ReferFriendPage() {
   const { sessionId } = useStore((state) => state);
   const referralCode = sessionId ? `VRA-${sessionId.slice(0, 8).toUpperCase()}` : 'VRA-FRIEND2024';
   const [copied, setCopied] = useState(false);
-  const referralLink = `https://vraeco.com?ref=${referralCode}`;
+  const referralLink = `https://vreco.vercel.app?ref=${referralCode}`;
 
   const copyCode = () => {
     navigator.clipboard.writeText(referralCode);
@@ -36,7 +36,7 @@ export default function ReferFriendPage() {
       <Helmet>
         <title>Refer a Friend | VRAECO — Get ₹100 OFF When You Share</title>
         <meta name="description" content="Share VRAECO with friends. They get ₹100 off, you get ₹100 off. Win-win." />
-        <link rel="canonical" href="https://vraeco.com/refer" />
+        <link rel="canonical" href="https://vreco.vercel.app/refer" />
       </Helmet>
       <main className="pt-32 pb-20 min-h-screen bg-void">
         <div className="max-w-[600px] mx-auto px-4">

@@ -13,7 +13,7 @@ export default function Blog() {
     <>
       <Helmet>
         <title>VRAECO Blog — Tips, Trends & Product Guides</title>
-        <link rel="canonical" href="https://vraeco.com/blog" />
+        <link rel="canonical" href="https://vreco.vercel.app/blog" />
       </Helmet>
       <main className="pt-32 pb-20 min-h-screen bg-void">
         <div className="section-inner max-w-[900px] mx-auto">

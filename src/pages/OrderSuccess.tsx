@@ -37,7 +37,7 @@ export default function OrderSuccess() {
 
   const [referralCopied, setReferralCopied] = useState(false);
   const referralCode = `VRA-${orderId?.slice(0, 8) || Math.random().toString(36).substr(2, 8).toUpperCase()}`;
-  const referralLink = `https://vraeco.com?ref=${referralCode}`;
+  const referralLink = `https://vreco.vercel.app?ref=${referralCode}`;
 
   const copyReferral = () => {
     navigator.clipboard.writeText(referralLink);

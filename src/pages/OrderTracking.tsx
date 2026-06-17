@@ -31,7 +31,7 @@ export default function OrderTracking() {
       <Helmet>
         <title>Track Your Order | VRAECO — Real-Time Delivery Status India</title>
         <meta name="description" content="Track your VRAECO order in real-time. Enter your order ID to get the latest delivery status updates." />
-        <link rel="canonical" href="https://vraeco.com/order-tracking" />
+        <link rel="canonical" href="https://vreco.vercel.app/order-tracking" />
       </Helmet>
       <main className="pt-32 pb-20 min-h-screen bg-void">
         <div className="section-inner max-w-[700px] mx-auto">

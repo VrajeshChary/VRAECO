@@ -40,7 +40,7 @@ export default function CategoryPage() {
       <Helmet>
         <title>{displayName} | VRAECO — Best Prices, Free Shipping & COD</title>
         <meta name="description" content={`Shop ${displayName.toLowerCase()} at VRAECO. Hand-picked viral products at unbeatable prices. Free shipping, cash on delivery, 7-day returns.`} />
-        <link rel="canonical" href={`https://vraeco.com/category/${category}`} />
+        <link rel="canonical" href={`https://vreco.vercel.app/category/${category}`} />
       </Helmet>
       <main className="pt-32 pb-20 min-h-screen bg-void">
         <div className="section-inner">

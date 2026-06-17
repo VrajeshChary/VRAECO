@@ -7,8 +7,8 @@ export default function Policies() {
         <title>VRAECO Store Policies — Privacy, Refunds, Terms & Shipping</title>
         <meta name="description" content="Read VRAECO's transparent store policies on shipping, returns, refunds, privacy, and terms of service. Customer-first approach with 7-day hassle-free returns." />
         <meta property="og:title" content="VRAECO Store Policies" />
-        <meta property="og:url" content="https://vraeco.com/policies" />
-        <link rel="canonical" href="https://vraeco.com/policies" />
+        <meta property="og:url" content="https://vreco.vercel.app/policies" />
+        <link rel="canonical" href="https://vreco.vercel.app/policies" />
       </Helmet>
   return (
     <main className="pt-32 pb-20 min-h-screen">

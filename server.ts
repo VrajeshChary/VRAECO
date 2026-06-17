@@ -447,7 +447,7 @@ const sendAbandonedCartEmail = async (email: string, items: any[]) => {
       <p><strong>Items:</strong> ${itemNames}</p>
       <p><strong>Total: ₹${total}</strong></p>
       <p style="color:#D4AF37;font-size:1.1em;">Use code: <strong>COMEBACK5</strong></p>
-      <p><a href="https://vraeco.com/checkout" style="background:#D4AF37;color:#000;padding:12px 24px;text-decoration:none;border-radius:8px;display:inline-block;margin:10px 0;">Complete Your Order →</a></p>
+      <p><a href="https://vreco.vercel.app/checkout" style="background:#D4AF37;color:#000;padding:12px 24px;text-decoration:none;border-radius:8px;display:inline-block;margin:10px 0;">Complete Your Order →</a></p>
     </div>
   `;
   try {

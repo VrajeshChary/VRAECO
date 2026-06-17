@@ -30,7 +30,7 @@ export default function SEO({
   product,
   faq
 }: SEOProps) {
-  const url = canonical || `https://vraeco.com`;
+  const url = canonical || `https://vreco.vercel.app`;
   const siteName = 'VRAECO';
 
   return (

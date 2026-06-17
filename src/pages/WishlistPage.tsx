@@ -18,7 +18,7 @@ export default function WishlistPage() {
     <>
       <Helmet>
         <title>My Wishlist | VRAECO — Save Your Favorites</title>
-        <link rel="canonical" href="https://vraeco.com/wishlist" />
+        <link rel="canonical" href="https://vreco.vercel.app/wishlist" />
       </Helmet>
       <main className="pt-32 pb-20 min-h-screen bg-void">
         <div className="max-w-[1200px] mx-auto px-4">

@@ -7,7 +7,7 @@ export default function PrivacyPolicy() {
       <Helmet>
         <title>Privacy Policy | VRAECO — Your Data is Safe & Secure</title>
         <meta name="description" content="Read how VRAECO collects, uses, and protects your personal information. We value your privacy and never sell your data to third parties." />
-        <link rel="canonical" href="https://vraeco.com/privacy-policy" />
+        <link rel="canonical" href="https://vreco.vercel.app/privacy-policy" />
       </Helmet>
       <main className="pt-32 pb-20 min-h-screen bg-void">
       <div className="section-inner max-w-[800px]">

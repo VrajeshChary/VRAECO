@@ -7,8 +7,8 @@ export default function About() {
         <title>About VRAECO — India's Viral Home Essentials Store</title>
         <meta name="description" content="Learn about VRAECO, India's top online destination for trending viral products, kitchen gadgets, wellness essentials, and home decor — all at unbeatable prices." />
         <meta property="og:title" content="About VRAECO" />
-        <meta property="og:url" content="https://vraeco.com/about" />
-        <link rel="canonical" href="https://vraeco.com/about" />
+        <meta property="og:url" content="https://vreco.vercel.app/about" />
+        <link rel="canonical" href="https://vreco.vercel.app/about" />
       </Helmet>
       <main className="pt-32 pb-20 min-h-screen">
       <div className="section-inner max-w-[800px]">

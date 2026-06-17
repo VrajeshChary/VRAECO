@@ -7,7 +7,7 @@ export default function BundlesPage() {
       <Helmet>
         <title>VRAECO Value Bundles — Save More With Curated Product Sets | India</title>
         <meta name="description" content="Shop curated bundles at VRAECO and save big. Combos of our best-selling viral products at unbeatable bundle prices. Free shipping on bundles!" />
-        <link rel="canonical" href="https://vraeco.com/bundles" />
+        <link rel="canonical" href="https://vreco.vercel.app/bundles" />
       </Helmet>
       <main className="pt-20 min-h-screen">
         <Bundles />

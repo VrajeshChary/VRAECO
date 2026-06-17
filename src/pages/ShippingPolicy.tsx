@@ -7,7 +7,7 @@ export default function ShippingPolicy() {
       <Helmet>
         <title>Shipping Policy | VRAECO — Free Standard Shipping Pan-India</title>
         <meta name="description" content="VRAECO ships across India. Free standard shipping on all orders (3-5 days). Express shipping (1-2 days) ₹149. Cash on Delivery with ₹50 surcharge." />
-        <link rel="canonical" href="https://vraeco.com/shipping-policy" />
+        <link rel="canonical" href="https://vreco.vercel.app/shipping-policy" />
       </Helmet>
     <main className="pt-32 pb-20 min-h-screen bg-void">
       <div className="section-inner max-w-[800px]">

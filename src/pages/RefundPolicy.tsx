@@ -7,7 +7,7 @@ export default function RefundPolicy() {
       <Helmet>
         <title>Refund & Return Policy | VRAECO — 7-Day Hassle-Free Returns</title>
         <meta name="description" content="VRAECO offers 7-day hassle-free returns. Unused items in original packaging eligible for full refund. Read our complete refund policy." />
-        <link rel="canonical" href="https://vraeco.com/refund-policy" />
+        <link rel="canonical" href="https://vreco.vercel.app/refund-policy" />
       </Helmet>
     <main className="pt-32 pb-20 min-h-screen bg-void">
       <div className="section-inner max-w-[800px]">

@@ -17,8 +17,8 @@ export default function FAQ() {
         <title>VRAECO FAQ — Shipping, Returns, COD & Product Questions | India</title>
         <meta name="description" content="Answers to common questions about VRAECO orders, shipping times, returns, COD availability, and product details. Can't find what you need? Email us anytime." />
         <meta property="og:title" content="Frequently Asked Questions | VRAECO" />
-        <meta property="og:url" content="https://vraeco.com/faq" />
-        <link rel="canonical" href="https://vraeco.com/faq" />
+        <meta property="og:url" content="https://vreco.vercel.app/faq" />
+        <link rel="canonical" href="https://vreco.vercel.app/faq" />
       </Helmet>
       <main className="pt-32 pb-20 min-h-screen">
       <div className="section-inner max-w-[800px]">

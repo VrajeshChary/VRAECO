@@ -31,7 +31,7 @@ export default function ReturnsRefunds() {
       <Helmet>
         <title>Returns & Refunds | VRAECO — Easy 7-Day Returns Process</title>
         <meta name="description" content="Learn how to return your VRAECO order in 4 simple steps. 7-day hassle-free returns, full refund within 3-5 business days. Contact support for help." />
-        <link rel="canonical" href="https://vraeco.com/returns-refunds" />
+        <link rel="canonical" href="https://vreco.vercel.app/returns-refunds" />
       </Helmet>
       <main className="pt-32 pb-20 min-h-screen bg-void">
       <div className="section-inner max-w-[900px]">

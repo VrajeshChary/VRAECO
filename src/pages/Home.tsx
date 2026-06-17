@@ -37,8 +37,8 @@ export default function Home() {
         <meta property="og:title" content="VRAECO — India's #1 Viral Home Essentials Store" />
         <meta property="og:description" content="Shop trending viral products at unbeatable prices. Free shipping, COD. Trusted by 10,000+ customers." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://vraeco.com" />
-        <link rel="canonical" href="https://vraeco.com" />
+        <meta property="og:url" content="https://vreco.vercel.app" />
+        <link rel="canonical" href="https://vreco.vercel.app" />
       </Helmet>
       <main>
       <Hero />

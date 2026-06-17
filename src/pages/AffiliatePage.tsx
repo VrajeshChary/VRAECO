@@ -8,7 +8,7 @@ export default function AffiliatePage() {
     <>
       <Helmet>
         <title>VRAECO Affiliate Program — Earn 15% on Referrals</title>
-        <link rel="canonical" href="https://vraeco.com/affiliate" />
+        <link rel="canonical" href="https://vreco.vercel.app/affiliate" />
       </Helmet>
       <main className="pt-32 pb-20 min-h-screen bg-void">
         <div className="max-w-[800px] mx-auto px-4">
