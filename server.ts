@@ -498,9 +498,11 @@ const processOrder = async (orderId: string, orderData: any) => {
   console.log(`Customer: ${orderData.customerName} | Phone: ${orderData.phone}`);
   console.log(`Total: ₹${orderData.total} | Payment: ${orderData.paymentMethod}`);
 
-  sendOrderEmail(orderData, orderId).catch(console.error);
-  sendCustomerConfirmationEmail(orderData, orderId).catch(console.error);
-  saveOrderToFirestore(orderId, orderData).catch(console.error);
+  await Promise.allSettled([
+    sendOrderEmail(orderData, orderId),
+    sendCustomerConfirmationEmail(orderData, orderId),
+    saveOrderToFirestore(orderId, orderData)
+  ]);
 };
 
 // ==================== EXPRESS SERVER ====================
@@ -759,7 +761,7 @@ app.use(express.json());
   app.post("/api/cart/abandoned", async (req, res) => {
     const { email, items } = req.body;
     if (!email || !items?.length) return res.status(400).json({ error: "Email and items required" });
-    sendAbandonedCartEmail(email, items).catch(console.error);
+    await sendAbandonedCartEmail(email, items).catch(console.error);
     res.json({ success: true });
   });
 
